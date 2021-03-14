@@ -13,27 +13,20 @@ header-img: "img/post-bg-rwd.jpg"
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-
-    <!--copied from markdown -->
-
     <p>这是keys961的博客，反正我也不知道自己会不会继续维护它。</p>
     <p>这里可能是开车念经的地方。</p>
     <p>联系方式:</p>
     <ul>
-    <li>E-Mail: <code>keys961@hotmail.com</code></li>
-    <li>QQ: 593961718</li>
-    <p>本人是Xbox & NS玩家，打游戏的可以加我Xbox和NS好友：</p>
-    <li>Xbox Live ID: yyupoib</li>
-    <li>NS: 2717-2956-7193</li>
-
-    <p><b>另外，我希望能够有机会到更大的平台实习，为了以后有口饭吃（卑微），但不知道导师和小老板放不放人。我的简历在: </b></p>
+        <li>E-Mail: <code>keys961@hotmail.com</code></li>
+        <li>QQ: <code>593961718</code></li>
+        <li>脉脉/LinkedIn: 搜我邮箱应该就能搜到</li>
+    </ul>
+    <p>我是Xbox玩家，打游戏的可以加我Xbox好友（我也有NS和Steam号，不过很少玩了）：</p>
     <ul>
-        <li><b><a href="/resume-zh_CN.pdf">中文</a></b></li>
-        <li><b><a href="/resume.pdf">English</a></b></li>
+        <li>Xbox: <code>yyupoib</code></li>
+        <li>Switch: <code>2717-2956-7193</code></li>
+        <li>Steam: <code>keys961</code></li>
     </ul>
-
-    </ul>
-
 </div>
 
 <!-- English Version -->
@@ -68,15 +61,15 @@ header-img: "img/post-bg-rwd.jpg"
     window.addEventListener('hashchange', _render);
 
     // handle render
-    function _render(){
+    function _render() {
         var _hash = window.location.hash;
         // en
-        if(_hash == "#en"){
+        if (_hash == "#en") {
             $select.selectedIndex = 1;
             $en.style.display = "block";
             $zh.style.display = "none";
-        // zh by default
-        }else{
+            // zh by default
+        } else {
             // not trigger onChange, otherwise cause a loop call.
             $select.selectedIndex = 0;
             $zh.style.display = "block";
@@ -85,10 +78,10 @@ header-img: "img/post-bg-rwd.jpg"
     }
 
     // handle select change
-    function onLanChange(index){
-        if(index == 0){
+    function onLanChange(index) {
+        if (index == 0) {
             window.location.hash = "#zh"
-        }else{
+        } else {
             window.location.hash = "#en"
         }
     }
@@ -105,14 +98,14 @@ header-img: "img/post-bg-rwd.jpg"
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
-    <script type="text/javascript">
+<script type="text/javascript">
     var gitalk = new Gitalk({
-    clientID: '{{site.gitalk.clientID}}',
-    clientSecret: '{{site.gitalk.clientSecret}}',
-    repo: '{{site.gitalk.repo}}',
-    owner: '{{site.gitalk.owner}}',
-    admin: ['{{site.gitalk.admin}}'],
-    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
+        clientID: '{{site.gitalk.clientID}}',
+        clientSecret: '{{site.gitalk.clientSecret}}',
+        repo: '{{site.gitalk.repo}}',
+        owner: '{{site.gitalk.owner}}',
+        admin: ['{{site.gitalk.admin}}'],
+        distractionFreeMode: {{ site.gitalk.distractionFreeMode }},
     id: 'about',
     });
     gitalk.render('gitalk-container');
@@ -120,7 +113,7 @@ header-img: "img/post-bg-rwd.jpg"
 {% endif %}
 <!-- Gitalk end -->
 
- <!-- disqus 评论框 start  -->
+<!-- disqus 评论框 start  -->
 {% if site.disqus.enable %}
 
 <div class="comment">
@@ -136,7 +129,7 @@ header-img: "img/post-bg-rwd.jpg"
     var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
     var disqus_url = "{{site.url}}{{page.url}}";
 
-    (function() {
+    (function () {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -144,4 +137,3 @@ header-img: "img/post-bg-rwd.jpg"
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
-
