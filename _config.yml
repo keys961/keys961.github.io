@@ -1,0 +1,48 @@
+# Site settings
+title: keys961 Blog
+SEOTitle: keys961 | keys961 Blog
+header-img: img/post-bg.jpg
+email: keys961@hotmail.com
+description: "🐭人，咸鱼 & 废物 & 失败人士, 喜欢睡觉吃饭玩游戏"
+keyword: "keys961"
+url: "http://keys961.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/keys961/keys961.github.io.git" # you code repository
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "本🐭人躺平了"
+sidebar-avatar: /img/avatar.gif      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+# SNS settings
+RSS: true
+# weibo_username:     2257171647
+# zhihu_username:     key961
+github_username:    keys961
+# twitter_username:  green
+# Build settings
+permalink: pretty
+paginate: 25
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+mermaid: 
+  src: 'https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.js'
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 5              # 相同标签数量大于这个数，才会出现在首页
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
