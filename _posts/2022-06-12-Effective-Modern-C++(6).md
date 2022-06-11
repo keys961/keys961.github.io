@@ -38,7 +38,9 @@ tags:
 
 - **若传入右值引用，则`T = Type`**
 
-# 3. 对右值引用使用`std::move `，对通用引用使用`std::forward`
+> 此外，若定义了`const T&`和`T&&`重载，传入右值（临时对象，字面值）会匹配后者。
+
+# 3. 对右值引用使用`std::move`，对通用引用使用`std::forward`
 
 只对右值引用使用`std::move`，而对于通用引用务必使用`std::forward`。
 
@@ -56,13 +58,17 @@ tags:
   
   - 不利于扩展
 
-此外，下面这种情况，谨慎在返回值调用`std::move`，以为这是“优化”：
+此外，下面这种情况，尽量不要在返回值调用`std::move`，误以为这是“优化”：
 
 1. 返回函数内局部变量，或某个值参数
 
 2. 该局部变量和函数返回值类型相同
 
 上面情况下，编译器会优化（RVO），避免返回值的拷贝。而调用`std::move`后，第2个条件就不符合了，无法优化。
+
+- 优化：只会调用一次普通构造函数
+
+- 不优化：会多一次移动构造函数的调用
 
 # 4. 避免通用引用上的重载
 
@@ -76,7 +82,7 @@ tags:
 > 
 > std::string petName("Darla");
 > logAndAdd(petName);                     // 1
-> logAndAdd(std::string("Persephone"));	// 2
+> logAndAdd(std::string("Persephone"));    // 2
 > logAndAdd("Patty Dog");                 // 3
 > ```
 > 
