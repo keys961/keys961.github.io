@@ -39,6 +39,12 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
   
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
