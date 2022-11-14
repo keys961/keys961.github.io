@@ -262,7 +262,7 @@ struct suspend_never {
 
 # 5. 相关源码和参考
 
-这里参考了：[渡劫 C++ 协程（1）：C++ 协程概览 | Benny Huo](https://www.bennyhuo.com/2022/03/09/cpp-coroutines-01-intro/)的文章，解释的很清楚。
+这里参考了：[渡劫 C++ 协程（1）：C++ 协程概览 Benny Huo](https://www.bennyhuo.com/2022/03/09/cpp-coroutines-01-intro/)的文章，解释的很清楚。
 
 然后代码也在：[TempRepo/coroutine at master · keys961/TempRepo · GitHub](https://github.com/keys961/TempRepo/tree/master/coroutine)，有注释。
 
