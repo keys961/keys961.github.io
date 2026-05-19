@@ -5,7 +5,7 @@ description: "归档文章列表"
 permalink: /archive/
 ---
 
-{% assign archived_posts = site.posts | where_exp: "post", "post.date | date: '%Y-%m-%d' < site.archive_cutoff_date" %}
+{% assign archived_posts = site.posts | where: "hidden", true %}
 
 {% for post in archived_posts %}
 <div class="post-preview">

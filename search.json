@@ -2,7 +2,7 @@
 layout: null
 ---
 [
-  {% assign active_posts = site.posts | where_exp: "post", "post.date | date: '%Y-%m-%d' >= site.archive_cutoff_date" %}
+  {% assign active_posts = site.posts | where_exp: "post", "post.hidden != true" %}
   {% for post in active_posts %}
     {
       "title"    : "{{ post.title | escape }}",

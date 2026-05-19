@@ -22,14 +22,13 @@ github_username:    keys961
 # twitter_username:  green
 # Build settings
 permalink: pretty
-paginate: 25
 archive_cutoff_date: 2026-05-19
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-plugins: [jekyll-paginate]
+gems: [jekyll-paginate-v2]
+plugins: [jekyll-paginate-v2]
 
 # Markdown settings
 # replace redcarpet to kramdown,
