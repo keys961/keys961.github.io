@@ -1,11 +1,12 @@
 ---
 layout: page
 description: "咸鱼 & 废物 & 失败人士, 喜欢睡觉吃饭玩游戏."
+pagination:
+  enabled: true
+  per_page: 25
 ---
 
-{% assign active_posts = site.posts | where_exp: "post", "post.date | date: '%Y-%m-%d' >= site.archive_cutoff_date" %}
-
-{% for post in active_posts %}
+{% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
@@ -23,3 +24,19 @@ description: "咸鱼 & 废物 & 失败人士, 喜欢睡觉吃饭玩游戏."
 </div>
 <hr>
 {% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
