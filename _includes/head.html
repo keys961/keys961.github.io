@@ -10,6 +10,20 @@
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
     <!-- Web App Manifest -->
+    <script>
+      window.asyncLoadScript = function (src, callback) {
+        var d = document;
+        var script = d.createElement('script');
+        script.src = src;
+        script.async = true;
+        if (typeof callback === 'function') {
+          script.addEventListener('load', function (event) { callback(null, event); }, false);
+          script.addEventListener('error', function (event) { callback(new Error('Failed to load ' + src), event); }, false);
+        }
+        var firstScript = d.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+      };
+    </script>
     <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
 
     <!-- Favicon -->
@@ -71,16 +85,16 @@
             }
         };
         mermaid.initialize(config);
-        $(function(){
-            var elements = document.getElementsByClassName("language-mermaid");
+        document.addEventListener('DOMContentLoaded', function () {
+            var elements = document.getElementsByClassName('language-mermaid');
             for (var i = elements.length; i--;) {
-                element = elements[i];
+                var element = elements[i];
                 var graphDefinition = element.innerText;
                 if (graphDefinition) {
                     var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function(svg){});
                     if (svg) {
                         var svgElement = document.createElement('div');
-                        preNode = element.parentNode;
+                        var preNode = element.parentNode;
                         svgElement.innerHTML = svg;
                         svgElement.setAttribute('class', 'mermaid');
                         svgElement.setAttribute('data-processed', 'true');
