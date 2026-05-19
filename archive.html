@@ -1,0 +1,27 @@
+---
+layout: page
+title: ARCHIVE
+description: "归档文章列表"
+permalink: /archive/
+---
+
+{% assign archived_posts = site.posts | where_exp: "post", "post.date | date: '%Y-%m-%d' < site.archive_cutoff_date" %}
+
+{% for post in archived_posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}

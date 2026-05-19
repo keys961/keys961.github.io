@@ -23,6 +23,7 @@ github_username:    keys961
 # Build settings
 permalink: pretty
 paginate: 25
+archive_cutoff_date: 2026-05-19
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # Gems
