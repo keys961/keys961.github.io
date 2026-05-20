@@ -5,9 +5,10 @@ description: "归档文章列表"
 permalink: /archive/
 ---
 
-{% assign archived_posts = site.posts | where: "hidden", true %}
+{% assign cutoff = site.archive_cutoff_date | date: '%Y-%m-%d' %}
 
-{% for post in archived_posts %}
+{% for post in site.posts %}
+{% if post.date | date: '%Y-%m-%d' < cutoff %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
@@ -24,4 +25,5 @@ permalink: /archive/
     </p>
 </div>
 <hr>
+{% endif %}
 {% endfor %}
