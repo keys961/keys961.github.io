@@ -10,7 +10,7 @@ Jekyll::Hooks.register :posts, :post_init do |post|
     next
   end
 
-  archived = post.date < cutoff_date
+  archived = post.date.to_date < cutoff_date
   post.data['archived'] = archived
   post.data['hidden'] = archived
 end
