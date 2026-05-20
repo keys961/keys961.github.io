@@ -60,3 +60,26 @@ featured-condition-size: 5              # 相同标签数量大于这个数，�
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
+# Comments configuration
+gitalk:
+  enable: false
+  clientID: ""
+  clientSecret: ""
+  repo: "keys961.github.io"
+  owner: "keys961"
+  admin: "keys961"
+  distractionFreeMode: false
+
+giscus:
+  enable: true
+  repo: "keys961/keys961.github.io"    # format: owner/repo
+  repo_id: "R_kgDOGuN3Ag"              # GitHub repository ID (filled automatically)
+  category: "General Comments"         # Discussions category name (from your URL)
+  category_id: "DIC_kwDOGuN3As4C9eTj"  # Discussions category ID (filled automatically)
+  mapping: "pathname"                  # one of: url, title, pathname, og:title, number
+  reactions_enabled: "1"               # "1" or "0"
+  emit_metadata: "0"                   # "1" or "0"
+  input_position: "bottom"             # top or bottom
+  theme: "light"
+  lang: "zh-CN"
+

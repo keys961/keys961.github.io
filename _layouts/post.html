@@ -64,23 +64,21 @@ layout: default
 
                 <!-- Previous/Next pager removed per user request -->
 
-                <div id="gitalk-container"></div>
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                <script src="https://cdn.bootcss.com/blueimp-md5/2.11.1/js/md5.js"></script>
-                <script>
-                    var md5sequence = md5(window.location.pathname)
-                    var gitalk = new Gitalk({
-                        clientID: '1c9b0d54f17bc7f9ba14',
-                        clientSecret: '4eebf0733ac7ab653387f14d7504ebffe0eb3008',
-                        repo: 'keys961.github.io',
-                        owner: 'keys961',
-                        admin: ['keys961'],
-                        id: md5sequence,      // Ensure uniqueness and length less than 50
-                        distractionFreeMode: false  // Facebook-like distraction free mode
-                        })
-                    gitalk.render('gitalk-container')
-                </script>
+                {% if site.giscus.enable %}
+                <div class="giscus" 
+                     data-repo="{{ site.giscus.repo }}" 
+                     data-repo-id="{{ site.giscus.repo_id }}" 
+                     data-category="{{ site.giscus.category }}" 
+                     data-category-id="{{ site.giscus.category_id }}" 
+                     data-mapping="{{ site.giscus.mapping }}" 
+                     data-reactions-enabled="{{ site.giscus.reactions_enabled }}" 
+                     data-emit-metadata="{{ site.giscus.emit_metadata }}" 
+                     data-input-position="{{ site.giscus.input_position }}" 
+                     data-theme="{{ site.giscus.theme }}" 
+                     data-lang="{{ site.giscus.lang }}">
+                </div>
+                <script src="https://giscus.app/client.js" async crossorigin="anonymous"></script>
+                {% endif %}
             </div>  
 
     <!-- Side Catalog Container -->

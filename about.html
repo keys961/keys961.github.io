@@ -84,24 +84,20 @@ header-img: "img/post-bg-rwd.jpg"
 
 
 <!-- Gitalk 评论 start  -->
-{% if site.gitalk.enable %}
-<!-- Gitalk link  -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '{{site.gitalk.clientID}}',
-        clientSecret: '{{site.gitalk.clientSecret}}',
-        repo: '{{site.gitalk.repo}}',
-        owner: '{{site.gitalk.owner}}',
-        admin: ['{{site.gitalk.admin}}'],
-        distractionFreeMode: {{ site.gitalk.distractionFreeMode }},
-    id: 'about',
-    });
-    gitalk.render('gitalk-container');
-</script>
+{% if site.giscus.enable %}
+    <div class="giscus" 
+             data-repo="{{ site.giscus.repo }}" 
+             data-repo-id="{{ site.giscus.repo_id }}" 
+             data-category="{{ site.giscus.category }}" 
+             data-category-id="{{ site.giscus.category_id }}" 
+             data-mapping="{{ site.giscus.mapping }}" 
+             data-reactions-enabled="{{ site.giscus.reactions_enabled }}" 
+             data-emit-metadata="{{ site.giscus.emit_metadata }}" 
+             data-input-position="{{ site.giscus.input_position }}" 
+             data-theme="{{ site.giscus.theme }}" 
+             data-lang="{{ site.giscus.lang }}">
+    </div>
+    <script src="https://giscus.app/client.js" async crossorigin="anonymous"></script>
 {% endif %}
 <!-- Gitalk end -->
 
