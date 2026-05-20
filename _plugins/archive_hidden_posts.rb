@@ -1,6 +1,6 @@
 require 'date'
 
-Jekyll::Hooks.register :posts, :post_read do |post|
+Jekyll::Hooks.register :posts, :post_init do |post|
   cutoff = post.site.config['archive_cutoff_date']
   next unless cutoff
 
