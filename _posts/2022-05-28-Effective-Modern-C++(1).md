@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Effective Modern C++(1): 类型推导"
 author: "keys961"

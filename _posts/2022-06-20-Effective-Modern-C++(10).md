@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Effective Modern C++(10): 微调"
 author: "keys961"

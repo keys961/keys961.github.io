@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Effective Modern C++(8): Lambda表达式"
 author: "keys961"

@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-利用Parameter Server扩展分布式机器学习"
 author: "keys961"

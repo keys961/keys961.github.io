@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-HotRing: A Hotspot-Aware In-Memory Key-Value Store"
 author: "keys961"

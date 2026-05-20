@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Effective Modern C++(6): 右值引用、移动、完美转发(1)"
 author: "keys961"

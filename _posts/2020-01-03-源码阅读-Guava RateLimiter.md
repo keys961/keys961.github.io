@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "源码阅读-Guava RateLimiter"
 author: "keys961"

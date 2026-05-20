@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Java Fundamental"
 author: "keys961"

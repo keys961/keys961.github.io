@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Before-or-After Atomicity"
 author: "keys961"

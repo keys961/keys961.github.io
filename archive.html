@@ -2,26 +2,53 @@
 layout: page
 title: ARCHIVE
 description: "归档文章列表"
-permalink: /archive/
+permalink: /archive-legacy/
 ---
+{% assign archived_posts = site.posts | where: "archived", true %}
+{% assign per_page = 25 %}
+{% assign page_num = 1 %}
+{% assign offset = page_num | minus: 1 | times: per_page %}
+{% assign paged_posts = archived_posts | slice: offset, per_page %}
+{% assign total_pages = archived_posts.size | divided_by: per_page %}
+{% assign rem = archived_posts.size | modulo: per_page %}
+{% if rem > 0 %}{% assign total_pages = total_pages | plus: 1 %}{% endif %}
 
-{% for post in site.posts %}
-{% if post.archived == true %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
+{% if paged_posts.size > 0 %}
+  {% for post in paged_posts %}
+  <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+          <h2 class="post-title">
+              {{ post.title }}
+          </h2>
+          {% if post.subtitle %}
+          <h3 class="post-subtitle">
+              {{ post.subtitle }}
+          </h3>
+          {% endif %}
+      </a>
+      <p class="post-meta">
+          Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+      </p>
+  </div>
+  <hr>
+  {% endfor %}
+{% else %}
+  <p>暂无归档文章。</p>
 {% endif %}
-{% endfor %}
+
+{% if total_pages > 1 %}
+<nav>
+  <ul class="pager">
+    {% if page_num > 1 %}
+      <li class="previous">
+        <a href="{% if page_num == 2 %}{{ '/archive/' | prepend: site.baseurl }}{% else %}{{ '/archive/page/' | append: page_num | minus: 1 | prepend: site.baseurl }}{% endif %}">&larr; Newer</a>
+      </li>
+    {% endif %}
+    {% if page_num < total_pages %}
+      <li class="next">
+        <a href="{{ '/archive/page/' | append: page_num | plus: 1 | prepend: site.baseurl }}">Older &rarr;</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}

@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Stream Systems-Stream Joins"
 author: "keys961"

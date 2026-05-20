@@ -1,15 +1,19 @@
 ---
 layout: page
+title: HOME
 description: "咸鱼 & 废物 & 失败人士, 喜欢睡觉吃饭玩游戏."
-pagination:
-  enabled: true
-  per_page: 25
-  sort_field: 'date'
-  sort_reverse: true
 ---
+{% assign visible = site.posts | where: "archived", false %}
+{% assign per_page = 25 %}
+{% assign page_num = 1 %}
+{% assign offset = page_num | minus: 1 | times: per_page %}
+{% assign page1_posts = visible | slice: offset, per_page %}
+{% assign total_pages = visible.size | divided_by: per_page %}
+{% assign rem = visible.size | modulo: per_page %}
+{% if rem > 0 %}{% assign total_pages = total_pages | plus: 1 %}{% endif %}
 
-{% if paginator.posts %}
-  {% for post in paginator.posts %}
+{% if page1_posts.size > 0 %}
+  {% for post in page1_posts %}
   <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
           <h2 class="post-title">
@@ -31,19 +35,12 @@ pagination:
   <p>暂无未归档的文章。</p>
 {% endif %}
 
-{% if paginator.total_pages > 1 %}
+{% if total_pages > 1 %}
 <nav>
   <ul class="pager">
-    {% if paginator.previous_page %}
-      <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
-      </li>
-    {% endif %}
-    {% if paginator.next_page %}
-      <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
-      </li>
-    {% endif %}
+    <li class="next">
+      <a href="{{ '/page/2/' | prepend: site.baseurl }}">Older &rarr;</a>
+    </li>
   </ul>
 </nav>
 {% endif %}

@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-A Pragmatic Implementation of Non-Blocking Linked-Lists"
 author: "keys961"

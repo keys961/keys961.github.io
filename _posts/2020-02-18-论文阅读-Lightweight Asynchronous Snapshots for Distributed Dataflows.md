@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-Lightweight Asynchronous Snapshots for Distributed Dataflows"
 author: "keys961"

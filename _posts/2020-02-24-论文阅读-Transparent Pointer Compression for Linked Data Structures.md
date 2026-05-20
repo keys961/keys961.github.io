@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-Transparent Pointer Compression for Linked Data Structures"
 author: "keys961"

@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Effective Modern C++(4): Modern C++(2)"
 author: "keys961"

@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "设计模式"
 author: "keys961"

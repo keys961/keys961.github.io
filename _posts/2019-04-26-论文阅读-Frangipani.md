@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-Frangipani：可扩展的分布式文件系统"
 author: "keys961"

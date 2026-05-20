@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Stream Systems-The What, Where, When, and How of Data Processing"
 author: "keys961"

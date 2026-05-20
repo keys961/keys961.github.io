@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Stream Systems-Advanced Windowing"
 author: "keys961"

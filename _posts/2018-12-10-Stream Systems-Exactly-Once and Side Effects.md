@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Stream Systems-Exactly-Once and Side Effects"
 author: "keys961"

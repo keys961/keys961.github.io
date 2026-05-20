@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Leetcode - Mirror Reflection"
 author: "keys961"

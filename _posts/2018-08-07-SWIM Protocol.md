@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "SWIM Protocol"
 author: "keys961"

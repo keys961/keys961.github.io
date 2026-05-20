@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "源码阅读-Redis Overview & 内存分配"
 author: "keys961"

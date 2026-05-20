@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-Distributed Snapshots: Determining Global States of Distributed Systems"
 author: "keys961"

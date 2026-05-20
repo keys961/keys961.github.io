@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "大量CLOSE_WAIT排查"
 author: "keys961"

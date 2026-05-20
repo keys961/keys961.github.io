@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "源码阅读-Redis数据结构: quicklist"
 author: "keys961"

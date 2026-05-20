@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-Lock-Free Linked List Using Compare-and-Swap"
 author: "keys961"

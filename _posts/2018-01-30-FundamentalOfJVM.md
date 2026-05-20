@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "JVM基础整理(大多数基于JDK7)"
 author: "keys961"

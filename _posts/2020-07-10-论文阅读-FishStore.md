@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-FishStore: Faster Ingestion with Subset Hashing"
 author: "keys961"

@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "MySQL Notes"
 author: "keys961"

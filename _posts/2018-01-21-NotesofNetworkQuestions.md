@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "计网历年卷错题知识点整理"
 author: "keys961"

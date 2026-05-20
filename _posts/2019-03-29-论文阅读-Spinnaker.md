@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "论文阅读-Spinnaker: 利用Paxos构建可扩展、一致且高可用的数据存储"
 author: "keys961"

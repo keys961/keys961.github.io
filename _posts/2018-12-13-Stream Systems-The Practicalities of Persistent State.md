@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: "Stream Systems-The Practicalities of Persistent State"
 author: "keys961"
