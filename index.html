@@ -1,0 +1,45 @@
+---
+layout: page
+description: "咸鱼 & 废物 & 失败人士, 喜欢睡觉吃饭玩游戏."
+---
+{% assign visible = site.posts | where: "archived", false %}
+{% assign per_page = 25 %}
+{% assign page_num = 1 %}
+{% assign offset = page_num | minus: 1 | times: per_page %}
+{% assign page1_posts = visible | slice: offset, per_page %}
+{% assign total_pages = visible.size | divided_by: per_page %}
+{% assign rem = visible.size | modulo: per_page %}
+{% if rem > 0 %}{% assign total_pages = total_pages | plus: 1 %}{% endif %}
+
+{% if page1_posts.size > 0 %}
+  {% for post in page1_posts %}
+  <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+          <h2 class="post-title">
+              {{ post.title }}
+          </h2>
+          {% if post.subtitle %}
+          <h3 class="post-subtitle">
+              {{ post.subtitle }}
+          </h3>
+          {% endif %}
+      </a>
+      <p class="post-meta">
+          Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+      </p>
+  </div>
+  <hr>
+  {% endfor %}
+{% else %}
+  <p>暂无未归档的文章。</p>
+{% endif %}
+
+{% if total_pages > 1 %}
+<nav>
+  <ul class="pager">
+    <li class="next">
+      <a href="{{ '/page/2/' | prepend: site.baseurl }}">Older &rarr;</a>
+    </li>
+  </ul>
+</nav>
+{% endif %}
