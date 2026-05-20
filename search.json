@@ -2,9 +2,8 @@
 layout: null
 ---
 [
-  {% assign cutoff = site.archive_cutoff_date | date: '%Y-%m-%d' %}
-  {% for post in site.posts %}
-  {% if post.date | date: '%Y-%m-%d' >= cutoff %}
+  {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}
+  {% for post in visible_posts %}
     {
       "title"    : "{{ post.title | escape }}",
       "subtitle" : "{{ post.subtitle | escape }}",
@@ -12,6 +11,5 @@ layout: null
       "url"      : "{{ site.baseurl }}{{ post.url }}",
       "date"     : "{{ post.date }}"
     }{% unless forloop.last %},{% endunless %}
-  {% endif %}
   {% endfor %}
 ]

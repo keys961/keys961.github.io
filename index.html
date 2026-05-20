@@ -1,27 +1,49 @@
 ---
 layout: page
 description: "咸鱼 & 废物 & 失败人士, 喜欢睡觉吃饭玩游戏."
+pagination:
+  enabled: true
+  per_page: 25
+  sort_field: 'date'
+  sort_reverse: true
 ---
 
-{% assign cutoff = site.archive_cutoff_date | date: '%Y-%m-%d' %}
-
-{% for post in site.posts %}
-{% if post.date | date: '%Y-%m-%d' >= cutoff %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
+{% if paginator.posts %}
+  {% for post in paginator.posts %}
+  <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+          <h2 class="post-title">
+              {{ post.title }}
+          </h2>
+          {% if post.subtitle %}
+          <h3 class="post-subtitle">
+              {{ post.subtitle }}
+          </h3>
+          {% endif %}
+      </a>
+      <p class="post-meta">
+          Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+      </p>
+  </div>
+  <hr>
+  {% endfor %}
+{% else %}
+  <p>暂无未归档的文章。</p>
 {% endif %}
-{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<nav>
+  <ul class="pager">
+    {% if paginator.previous_page %}
+      <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
+      </li>
+    {% endif %}
+    {% if paginator.next_page %}
+      <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
