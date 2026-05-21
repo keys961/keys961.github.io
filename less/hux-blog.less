@@ -2,11 +2,12 @@
 @import "mixins.less";
 @import "sidebar.less";
 @import "side-catalog.less";
+@import "search.less";
 
 // Global Components
 
 body {
-	.sans-serif;
+	.sans-serif();
 	font-size: 16px;
 	// Hux mpdify to 16px (Mobile First), and increase to 20px while 768+ width
 	color: @gray-dark;
@@ -26,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-	.sans-serif;
+	.sans-serif();
 	line-height: 1.1;
 	font-weight: bold;
 }
@@ -286,7 +287,7 @@ pre code{
 	left: 0;
 	width: 100%;
 	z-index: 3;
-	.sans-serif;
+	.sans-serif();
 	.navbar-brand {
 		font-weight: 800;
 		// materialize
@@ -400,7 +401,7 @@ pre code{
 	background: no-repeat center center;
 	background-color: @gray;
 	background-attachment: scroll;
-	.background-cover;
+	.background-cover();
 	// NOTE: Background images are set within the HTML using inline CSS!
 	margin-bottom: 0px;  /* 0 on mobile, modify by Hux */
 	@media only screen and (min-width: 768px) {
@@ -430,10 +431,10 @@ pre code{
 			font-size: 50px;
 		}
 		.subheading {
-			.sans-serif;
-			font-size: 18px;
-			line-height: 1.1;
-			display: block;
+		.sans-serif();
+		font-size: 18px;
+		line-height: 1.1;
+		display: block;
 			font-weight: 300;
 			margin: 10px 0 0;
 		}
@@ -454,15 +455,15 @@ pre code{
 			display: block;
 		}
 		.subheading {
-			.sans-serif;
-			font-size: 17px;
-			line-height: 1.4;
+		.sans-serif();
+		font-size: 17px;
+		line-height: 1.4;
 			font-weight: normal;
 			margin: 10px 0 30px;
 			margin-top: -5px;
 		}
 		.meta {
-			.serif;
+			.serif();
 			font-style: italic;
 			font-weight: 300;
 			font-size: 18px;
@@ -509,7 +510,7 @@ pre code{
 		}
 	}
 	> .post-meta {
-		.serif;
+		.serif();
 		color: @gray;
 		font-size: 16px;
 		font-style: italic;
@@ -658,13 +659,11 @@ form .row:first-child .floating-label-form-group {
 // Button Styles
 
 .btn {
-	.sans-serif;
+	.sans-serif();
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 800;
 	letter-spacing: 1px;
-	border-radius: 0;
-	padding: 15px 25px;
 }
 
 .btn-lg {
@@ -690,7 +689,7 @@ form .row:first-child .floating-label-form-group {
 	li {
 		> a,
 		> span {
-			.sans-serif;
+			.sans-serif();
 			text-transform: uppercase;
 			font-size: 13px;
 			font-weight: 800;
@@ -842,7 +841,7 @@ img::-moz-selection {
 .one-tag-list{
 	.tag-text{
 		font-weight: 200;
-		.sans-serif;
+		.sans-serif();
 	}
 	.post-preview {
 		position: relative;
@@ -1023,6 +1022,3 @@ img::-moz-selection {
 .page-fullscreen footer .copyright a:hover{
 	color: #ddd;
 }
-
-
-

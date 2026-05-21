@@ -35,3 +35,4 @@ Temporary Items
 _site
 .jekyll-cache
 Gemfile.lock
+node_modules/

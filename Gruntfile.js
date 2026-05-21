@@ -17,14 +17,12 @@ module.exports = function(grunt) {
                 files: {
                     "css/hux-blog.css": "less/hux-blog.less"
                 }
-            },
-            minified: {
-                options: {
-                    paths: ["css"],
-                    cleancss: true
-                },
+            }
+        },
+        cssmin: {
+            target: {
                 files: {
-                    "css/hux-blog.min.css": "less/hux-blog.less"
+                    "css/hux-blog.min.css": "css/hux-blog.css"
                 }
             }
         },
@@ -64,10 +62,11 @@ module.exports = function(grunt) {
     // Load the plugins.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-contrib-watch');
-
+ 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
+    grunt.registerTask('default', ['uglify', 'less', 'cssmin', 'usebanner']);
 
 };
