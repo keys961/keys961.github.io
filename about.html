@@ -13,12 +13,7 @@ header-img: "img/post-bg-rwd.jpg"
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-    <p>这是keys961的博客，反正我也不知道自己会不会继续维护它。</p>
-    <p>这里可能是开车念经的地方。</p>
-    <p>联系方式:</p>
-    <ul>
-        <li>E-Mail: <code>keys961@hotmail.com</code></li>
-    </ul>
+    <p>博主很懒，不想多写。</p>
 </div>
 
 <!-- English Version -->
@@ -85,19 +80,21 @@ header-img: "img/post-bg-rwd.jpg"
 
 <!-- Gitalk 评论 start  -->
 {% if site.giscus.enable %}
-    <div class="giscus" 
-             data-repo="{{ site.giscus.repo }}" 
-             data-repo-id="{{ site.giscus.repo_id }}" 
-             data-category="{{ site.giscus.category }}" 
-             data-category-id="{{ site.giscus.category_id }}" 
-             data-mapping="{{ site.giscus.mapping }}" 
-             data-reactions-enabled="{{ site.giscus.reactions_enabled }}" 
-             data-emit-metadata="{{ site.giscus.emit_metadata }}" 
-             data-input-position="{{ site.giscus.input_position }}" 
-             data-theme="{{ site.giscus.theme }}" 
-             data-lang="{{ site.giscus.lang }}">
-    </div>
-    <script src="https://giscus.app/client.js" async crossorigin="anonymous"></script>
+    <script src="https://giscus.app/client.js" 
+                    data-repo="{{ site.giscus.repo }}" 
+                    data-repo-id="{{ site.giscus.repo_id }}" 
+                    data-category="{{ site.giscus.category }}" 
+                    data-category-id="{{ site.giscus.category_id }}" 
+                    data-mapping="{{ site.giscus.mapping }}" 
+                    data-strict="{{ site.giscus.strict }}" 
+                    data-reactions-enabled="{{ site.giscus.reactions_enabled }}" 
+                    data-emit-metadata="{{ site.giscus.emit_metadata }}" 
+                    data-input-position="{{ site.giscus.input_position }}" 
+                    data-loading="{{ site.giscus.loading }}" 
+                    data-theme="{{ site.giscus.theme }}" 
+                    data-lang="{{ site.giscus.lang }}"
+                    async crossorigin="anonymous">
+                </script>
 {% endif %}
 <!-- Gitalk end -->
 

@@ -65,19 +65,21 @@ layout: default
                 <!-- Previous/Next pager removed per user request -->
 
                 {% if site.giscus.enable %}
-                <div class="giscus" 
-                     data-repo="{{ site.giscus.repo }}" 
-                     data-repo-id="{{ site.giscus.repo_id }}" 
-                     data-category="{{ site.giscus.category }}" 
-                     data-category-id="{{ site.giscus.category_id }}" 
-                     data-mapping="{{ site.giscus.mapping }}" 
-                     data-reactions-enabled="{{ site.giscus.reactions_enabled }}" 
-                     data-emit-metadata="{{ site.giscus.emit_metadata }}" 
-                     data-input-position="{{ site.giscus.input_position }}" 
-                     data-theme="{{ site.giscus.theme }}" 
-                     data-lang="{{ site.giscus.lang }}">
-                </div>
-                <script src="https://giscus.app/client.js" async crossorigin="anonymous"></script>
+                <script src="https://giscus.app/client.js" 
+                    data-repo="{{ site.giscus.repo }}" 
+                    data-repo-id="{{ site.giscus.repo_id }}" 
+                    data-category="{{ site.giscus.category }}" 
+                    data-category-id="{{ site.giscus.category_id }}" 
+                    data-mapping="{{ site.giscus.mapping }}" 
+                    data-strict="{{ site.giscus.strict }}" 
+                    data-reactions-enabled="{{ site.giscus.reactions_enabled }}" 
+                    data-emit-metadata="{{ site.giscus.emit_metadata }}" 
+                    data-input-position="{{ site.giscus.input_position }}" 
+                    data-loading="{{ site.giscus.loading }}" 
+                    data-theme="{{ site.giscus.theme }}" 
+                    data-lang="{{ site.giscus.lang }}"
+                    async crossorigin="anonymous">
+                </script>
                 {% endif %}
             </div>  
 
