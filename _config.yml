@@ -82,6 +82,6 @@ giscus:
   emit_metadata: "0"
   input_position: "bottom"
   loading: "lazy"
-  theme: "preferred_color_scheme"
+  theme: "light"
   lang: "zh-CN"
 
