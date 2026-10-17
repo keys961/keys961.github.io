@@ -158,10 +158,16 @@
     var postContainer = document.querySelector('div.post-container');
     if (!postContainer) { return; }
 
+    var seenIds = {};
+    container.innerHTML = '';
+
     var headings = postContainer.querySelectorAll('h1,h2,h3,h4,h5,h6');
     for (var i = 0; i < headings.length; i++) {
       var heading = headings[i];
-      if (!heading.id) { continue; }
+      if (!heading.id || !heading.textContent.trim()) { continue; }
+      if (seenIds[heading.id]) { continue; }
+      seenIds[heading.id] = true;
+
       var item = document.createElement('li');
       item.className = heading.tagName.toLowerCase() + '_nav';
 
